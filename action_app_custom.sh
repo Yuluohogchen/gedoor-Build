@@ -1,20 +1,11 @@
 #!/bin/sh
 #本脚本用来个性化定制app,不会修改任何程序代码
 
-#去除河蟹,默认启用
-function app_clear_18plus() 
-{
-    if [ $APP_NAME = 'legado' ]; then
-        echo "清空18PlusList.txt"
-        echo "">$APP_WORKSPACE/app/src/main/assets/18PlusList.txt
-    fi
-}
-
-#修改桌面阅读名为阅读.A,安装多个阅读时候方便识别,默认启用
+#修改桌面阅读名为阅读X,安装多个阅读时候方便识别,默认启用
 function app_rename() 
 {
     if [ $APP_NAME = 'legado' ]; then
-        sed 's/"app_name">阅读/"app_name">阅读.'"$APP_SUFFIX"'/' $APP_WORKSPACE/app/src/main/res/values-zh/strings.xml -i
+        sed 'X/"app_name">阅读/"app_name">阅读'"$APP_SUFFIX"'/' $APP_WORKSPACE/app/src/main/res/values-zh/strings.xml -i
     fi
 }
 
