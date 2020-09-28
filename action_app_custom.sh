@@ -39,10 +39,10 @@ function app_minify()
 #和已有阅读共存,默认启用
 function app_live_together()
 {
-    if [ $APP_NAME = 'legado' ]; then
+    if [ $APP_NAME = 'legadoX' ]; then
         echo "解决安装程序共存问题"
-        sed "s/'.release'/'.release$APP_SUFFIX'/" $APP_WORKSPACE/app/build.gradle -i
-        sed "s/.release/.release$APP_SUFFIX/"     $APP_WORKSPACE/app/google-services.json -i 
+        sed "x/'.release'/'.release$APP_SUFFIX'/" $APP_WORKSPACE/app/build.gradle -i
+        sed "x/.release/.release$APP_SUFFIX/"     $APP_WORKSPACE/app/google-services.json -i 
     fi
 }
 
